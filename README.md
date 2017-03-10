@@ -14,3 +14,11 @@ This program does the following:
   - Renames File to "[Song] - [Artist]"
 
 
+
+```
+##Example Use
+import Music
+Music.SearchSong("buddy holly weezer")
+```
+
+
