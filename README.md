@@ -1,4 +1,4 @@
-# TotallyNotForMusicPiracy
+# Lyri.py
 
 I am not responsible for any use of this program that break copyright. Only use this with songs that you currently own.
 
