@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>TCTC Notify</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<script type = "text/javascript">
+function test() {
+        setTimeout(function() {
+            document.getElementById("myDiv").style.display="none";
+        }, 8000);
+        
+    }
+    </script> 
+
+</head>
+
+<body>
+<form id="msform" action = "{{url_for('Add') }}" method = "post">
+  <ul id="progressbar">
+  </ul>
+  <fieldset>
+    <h2 class="fs-title">Download Music</h2>
+    <h3 class="fs-subtitle"></h3>
+    <input type="text" name="artist" placeholder="Artist" />
+    <input type="text" name="song" placeholder="Song" />
+    <input type="text" name="address" placeholder="Dorm Number (Optional)">
+    <input type="submit" name="next" class="next action-button" value="Download" onclick="test()"/>
+  </fieldset>
+  <fieldset>
+      <div id = "myDiv"><img id = "myImage" src = "{{ url_for('static', filename='Spinner.gif') }}"></div><br>
+  </fieldset>
+
+</form>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+</html>

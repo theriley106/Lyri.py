@@ -66,6 +66,8 @@ def SearchSong(string):
 	Audio_File = SearchYoutube('{} {}'.format(information["Title"], information["Artist"]))
 	NewFileName = "{} - {}.mp3".format(information["Title"], information["Artist"])
 	UpdateInfo(Audio_File, Image_File, information["Album"], information["Artist"], information["Title"], NewFileName)
+	os.system("rm {}".format(Image_File))
+	return NewFileName
 
 def UpdateInfo(mp3_file_name, artwork_file_name, album, artist, title, filename):
 	audiofile = eyed3.load(mp3_file_name)
